@@ -1,0 +1,108 @@
+.HistoryWrap {
+  height: 100vh;
+  width: 100vw;
+  background-color: #EFDECD;
+  display: flex;
+  flex-direction: column;
+  overflow : hidden;
+}
+/************ HistoryBar ***********/
+.HistoryBar{
+  flex : 1;
+  display : flex;
+  align-items: center;
+  /* margin-top : 10px; */
+  border-bottom: 2px solid black;
+}
+
+
+/************ HistoryMain ***********/
+.HistoryMainWrap{
+  flex : 10;
+  display : flex;
+  align-items: center;
+}
+
+/************ Tree ***********/
+#chartdiv{
+  width: 100%; 
+  height: 85%;
+}
+
+
+/************ ChatCard ***********/
+.ChatCardWrap{
+  width: 60%;
+  height: 630px;
+  background-color: transparent;
+  border-radius : 10px;
+  border: 4px solid black;
+  margin-right : 5vw;
+  display: flex;
+  flex-direction: column;
+  overflow : hidden;
+}
+
+.ChatTitleWrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ChatTitle{
+  font-family: 'REM', sans-serif;
+  font-size: 30px;
+  margin-left : 10px;
+}
+
+
+.ChatClose{
+  font-family: 'REM', sans-serif;
+  font-size: 20px;
+  margin-right : 10px;
+  cursor: pointer;
+}
+
+.ChatListWrap{
+  flex : 8;
+
+  overflow : auto;
+  border-top : 4px solid black;
+  border-bottom : 4px solid black;
+}
+
+.UserChat{
+  padding : 5px;
+  height: auto;
+  width : 100%;
+  display: flex;
+  margin-top : 5px;
+  margin-bottom: 5px;
+}
+
+/* style={{
+  backgroundColor: "#ffffff",
+  height: "9.375rem",
+  padding: "0.625rem",
+}} */
+
+.BotChat{
+  padding : 5px;
+  height: auto;
+  width : 100%;
+  display: flex;
+  margin-top : 5px;
+  margin-bottom: 5px;
+  background-color: #9F8170;
+}
+
+
+
+.ChatCardButtonWrap{
+  flex : 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

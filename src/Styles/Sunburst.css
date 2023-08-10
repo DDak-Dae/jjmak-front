@@ -1,0 +1,39 @@
+.custom-sunburst-chart {
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(246, 246, 246, 1) 47%,
+      rgba(237, 237, 237, 1) 100%
+    );
+  }
+  /* .custom-sunburst-chart.wj-sunburst ellipse {
+      fill: yellow;
+    }
+    
+    .custom-sunburst-chart.wj-sunburst .slice-level2 > path {
+      fill: red;
+    }
+    
+    .custom-sunburst-chart.wj-sunburst .slice-level3 > path {
+      fill: blue;
+    }
+    
+    .custom-sunburst-chart.wj-sunburst .slice-level4 > path {
+      fill: grey;
+    }
+    
+    .custom-sunburst-chart.wj-sunburst .slice-level5 > path {
+      fill: white;
+      stroke-width: 2;
+      stroke: black;
+    } */
+  
+  .wj-flexchart .wj-state-selected {
+    stroke: rgb(66, 182, 85);
+    stroke-width: 5;
+    stroke-dasharray: 1;
+    /* fill: "l(0,0,1,0)#89f7fe-#66a6ff"; */
+  }

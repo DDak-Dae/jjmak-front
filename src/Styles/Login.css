@@ -1,0 +1,219 @@
+.loginWrap {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1E1E1E;
+  display: flex;
+  align-items: center;
+}
+
+.loginWrapCenter{
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginelementWrap{
+  height: 85vh;
+  width: 48%;
+  margin: 0 3px 0 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginLogoCircle{
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  background-color: #2D2D2D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImg{
+  height: 70%;
+  width: 70%;
+  background-image: url('../../public/static/img/MainLogo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.TextWrap{
+  height: 70vh;
+  width: 40vw;
+  background-color: #2D2D2D;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*@@@@@@@2       로그인창        @@@@@@@@@@@@@*/
+.loginTextWrap{
+  height: 60vh;
+  width: 30vw;
+  /* display: none; */
+}
+
+.loginTitle{
+  height: 50px;
+  width: 100%;
+  background-color: #E0FFFF;
+  border-radius: 10px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #006FFF;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.loginText{
+  
+}
+
+.idInput {
+  padding-left: 10px;
+  display: block;
+  height: 6vh;
+  width: 97%;
+  margin: 15vh auto 0;
+  outline: none;
+  background-color: #454545;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 2.5vh;
+  box-sizing: border-box;
+}
+
+.pwInput {
+  padding-left: 10px;
+  display: block;
+  height: 6vh;
+  width: 97%;
+  margin: 1vh auto 0;
+  outline: none;
+  background-color: #454545;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 2.5vh;
+  box-sizing: border-box;
+}
+
+.goBtn{
+  display: block;
+  height: 6vh;
+  width: 97%;
+  margin: 11vh auto 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #454545;
+  font-size: 2.5vh;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.goBtn:hover{
+  background-color: white;
+  color: black;
+}
+
+.goToJoinBtn{
+  display: block;
+  height: 6vh;
+  width: 40%;
+  margin: 2vh auto 0;
+  border: none;
+  background-color: #2D2D2D;
+  font-size: 2.5vh;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*@@@@@@@2       회원가입창        @@@@@@@@@@@@@*/
+.joinTextWrap{
+  height: 80%;
+  width: 70%;
+  display: block;
+}
+
+.joinIcon{
+  height: 90px;
+  width: 90px;
+  margin: 0 auto;
+  background-image: url('../../public/static/img/JoinIcon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.joinIdInput{
+  padding-left: 10px;
+  display: block;
+  height: 6vh;
+  width: 97%;
+  margin: 10vh auto 0;
+  outline: none;
+  background-color: #454545;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 2.5vh;
+  box-sizing: border-box;
+}
+
+.joinPwInput{
+  padding-left: 10px;
+  display: block;
+  height: 6vh;
+  width: 97%;
+  margin: 1vh auto 0;
+  outline: none;
+  background-color: #454545;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 2.5vh;
+  box-sizing: border-box;
+}
+
+.joinKeyInput{
+  padding-left: 10px;
+  display: block;
+  height: 6vh;
+  width: 97%;
+  margin: 1vh auto 0;
+  outline: none;
+  background-color: #454545;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 2.5vh;
+  box-sizing: border-box;
+}
+
+.joinBtn{
+  display: block;
+  height: 6vh;
+  width: 97%;
+  margin: 6vh auto 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #454545;
+  font-size: 2.5vh;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.joinBtn:hover{
+  background-color: white;
+  color: black;
+}

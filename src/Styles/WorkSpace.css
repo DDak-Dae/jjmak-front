@@ -1,0 +1,269 @@
+.workspaceWrap {
+  height: 100vh;
+  width: 100vw;
+  display : flex;
+  background-color: #EFDECD;
+  /* background-color: aliceblue; */
+  flex-direction: column;
+  /* background-image: url("../../public/static/img/backgournd/backgroundimage.jpg"); */
+  /* display: flex; */
+}
+
+/****************** workspaceArea *********************/
+.workspaceUpperBar {
+  flex : 1;
+  /* background-color: #f5f4f1; */
+  border-bottom: 1.5px solid #5f686e;
+  display : flex;
+  align-items: center;/* 자식 요소들이 가운데 높이로 오게 함 */
+  /* background-color: rgba(101, 119, 34, 0.6); */
+}
+
+
+.workspaceElemWrap{
+  flex : 10;
+  /* width: 100%;
+  height: calc(100vh - 9vh); */
+  flex-direction: row;
+  display: flex;
+  /* flex-flow: row nowrap; */
+  /* background-color: #2679CD; */
+  overflow : hidden;
+}
+
+/* */
+
+
+/****************** leftBar *********************/
+.leftSideBarWrap {
+  flex : 2;
+  /* width: 20%;
+  height: 100%; */
+  display: flex;
+  /* margin: 0 auto; */
+  /* background-color: #ffffff; */
+  border-right: 1.5px solid #5f686e;
+  flex-direction: column;
+  /* background-color: palegoldenrod; */
+
+}
+
+/* leftBar elem css*/
+.leftBarProfile{
+  flex : 2;
+  /* background-color: #2679CD; */
+  /* background-color: #ffffff; */
+  display : flex;
+  flex-direction: column;
+  /* align-items: 'center';
+  justify-content: 'center'; */
+}
+
+
+.ProfileTitle{
+  margin-left : 10px;
+  margin-top : 10px;
+  font-size: 20px;
+  font-family: 'REM', sans-serif;
+}
+
+.ProfileWrap{
+  flex : 1;
+  /* background-color : aqua; */
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬하기 위해 column 설정 */
+  justify-content: center; /* 수직 가운데 정렬 */
+  align-items: center; /* 수평 가운데 정렬 */
+}
+
+.Profile{
+  height : auto;
+  width: auto;
+  display : flex;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+
+.leftBarTags {
+  flex : 6;
+
+  display : flex;
+  flex-direction: column;
+  overflow : hidden;
+  /* background-color: #7528e9; */
+  /* background-color: #ffffff; */
+}
+
+.TagTitleWrap{
+  flex:0;
+}
+
+.TagTitle{
+  margin-left : 10px;
+  margin-top : 10px;
+  font-family: 'REM', sans-serif;
+  font-size: 20px;
+}
+
+.TagsWrap{
+  flex : 1;
+  overflow: auto;
+  /* margin-top : 5px; */
+
+}
+
+.leftBarHistory {
+  flex : 1;
+  /* background-color: #5f686e; */
+  /* background-color: #ffffff; */
+  width: 100%;
+}
+
+
+
+/****************** workSpaceMain *********************/
+.workSpaceMainWrap {
+  flex : 6;
+  /* width: 60%; */
+  display: flex;
+  flex-direction: column;
+  /* margin: 0 auto; */
+  padding : 10px;
+  /* background-color: blue; */
+  /* background-color: palegoldenrod; */
+}
+
+.workSpaceMainUp{
+  display: flex;
+  align-items: center;
+}
+
+.workSpaceMainChannel{
+  height: auto;
+  overflow: scroll;
+}
+
+
+
+/****************** rightSideBar *********************/
+.rightSideBarWrap {
+  flex : 2;
+  /* width: 20%;
+  height: 100%; */
+  /* margin: 0 auto; */
+  /* background-color: #f5f4f1; */
+  display : flex;
+  flex-direction: column;
+  border-left: 1px solid black; /* 왼쪽 테두리 설정 */
+  /* background-color: palegoldenrod; */
+  /* overflow: hidden; */
+}
+
+.cloudWordTitle{
+  flex:0;
+  margin-left : 10px;
+  margin-top : 10px;
+  font-size: 20px;
+  font-family: 'REM', sans-serif;
+
+}
+
+.wordCloudWrap{
+  flex : 1;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+/* WordCloud */
+.wordCloud{
+  width: 100%;
+  height: 100%;
+  /* background-color: rgb(94, 39, 0); */
+  /* margin-top: 20px; */
+}
+
+.fileInfoWrap{
+  flex : 1;
+  /* background-color: #2679CD; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.informationTitle{
+  margin-left : 10px;
+  margin-top : 10px;
+  font-size: 20px;
+  font-family: 'REM', sans-serif;
+}
+
+.fileInfoDetailWrap{
+  flex : 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fileInfoDetail{
+  font-size: 40px;
+  font-family: 'REM', sans-serif;
+}
+
+/**************** tagButton ******************/
+/* .tagButton{
+  border-radius: 40px ;
+  margin-left: 5px;
+  margin-right: 5px;
+  white-space: nowrap;
+  background-color: yellow;
+} */
+
+
+
+
+
+.title{
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+.descrip{
+  font-family: 'Orbit', sans-serif;
+}
+
+.line{
+  display:flex;
+  flex-basis:100%;
+  align-items:center;
+  color:black
+}
+
+.division-line{
+  border-top : 2px solid #444444;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* Logo */
+/* .Logo{
+  width: 130px;
+  height: auto;
+  margin-top : 15px;
+  margin-bottom : 8px;
+  margin-left : 15px;
+  flex: 1;
+}
+
+.menu {
+  margin-right: auto;
+  flex: 0 0 auto;
+  
+}
+
+.container {
+  display: flex;
+} */
