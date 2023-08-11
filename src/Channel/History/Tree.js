@@ -1,12 +1,11 @@
-import '../../Styles/Tree.css'
+import "../../Styles/Tree.css";
 import React, { useLayoutEffect, useEffect, useState } from "react";
-import { GetTreeData, SelectedContext } from "../../services/api";
+import { GetTreeData } from "../../services/api";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5hierarchy from "@amcharts/amcharts5/hierarchy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import { useNavigate } from "react-router-dom";
 import ChatLog from "./ChatLog";
-import HistoryBar from './HistoryBar';
+import HistoryBar from "./HistoryBar";
 
 function Tree() {
   const [treeData, setTreeData] = useState({});
@@ -14,7 +13,6 @@ function Tree() {
   const [selectedId, setSeletedId] = useState("");
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatLog, setChatLog] = useState({});
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,6 +47,7 @@ function Tree() {
           width: am5.percent(100),
           height: am5.percent(100),
           layout: root.verticalLayout,
+          cursorOverStyle: "default",
         })
       );
 
@@ -77,11 +76,12 @@ function Tree() {
       });
       series.nodes.template.set(
         "tooltipText",
-        "question: {question} \n\n\n answer: [bold]{answer}[/]"
+        "question: \n\n {question}"
+        // "question: {question} \n\n\n answer: [bold]{answer}[/]"
       );
       series.nodes.template.setAll({
         toggleKey: "none",
-        // cursorOverStyle: "default",
+        cursorOverStyle: "default",
       });
       // series
       //   .get("colors")
@@ -96,16 +96,16 @@ function Tree() {
       series.nodes.template.events.on("click", function (ev) {
         console.log(ev.target.dataItem.dataContext.question);
         console.log(ev.target.dataItem.dataContext.answer);
+        setSeletedId(ev.target.dataItem.dataContext.id);
         setChatLog({
           question: ev.target.dataItem.dataContext.question,
           answer: ev.target.dataItem.dataContext.answer,
         });
         setIsChatOpen(true);
       });
-      series.nodes.template.events.on("dblclick", function (ev) {
-        console.log(ev.target.dataItem.dataContext.id);
-        setSeletedId(ev.target.dataItem.dataContext.id);
-      });
+      // series.nodes.template.events.on("dblclick", function (ev) {
+      //   console.log(ev.target.dataItem.dataContext.id);
+      // });
 
       series.data.setAll([treeData]);
       series.set("selectedDataItem", series.dataItems[0]);
@@ -118,26 +118,26 @@ function Tree() {
     }
   }, [isLoading, treeData]);
 
-  useEffect(() => {
-    if (selectedId) {
-      SelectedId();
-    }
-  }, [selectedId]);
+  // useEffect(() => {
+  //   if (selectedId) {
+  //     SelectedId();
+  //   }
+  // }, [selectedId]);
 
-  const SelectedId = async () => {
-    try {
-      const response = await SelectedContext(selectedId);
-      console.log(response);
+  // const SelectedId = async () => {
+  //   try {
+  //     const response = await SelectedContext(selectedId);
+  //     console.log(response);
 
-      navigate(`/channel/${response.channelId}`, {
-        state: {
-          msgId: selectedId,
-        },
-      });
-    } catch (error) {
-      console.error("데이터를 서버로 전송하는 중 오류가 발생했습니다:", error);
-    }
-  };
+  //     navigate(`/channel/${response.channelId}`, {
+  //       state: {
+  //         msgId: selectedId,
+  //       },
+  //     });
+  //   } catch (error) {
+  //     console.error("데이터를 서버로 전송하는 중 오류가 발생했습니다:", error);
+  //   }
+  // };
 
   return (
     <div className="HistoryWrap">
@@ -148,14 +148,17 @@ function Tree() {
       <div className="HistoryMainWrap">
         <div id="chartdiv"></div>
         {isChatOpen && (
-          <ChatLog chatLog={chatLog} setIsChatOpen={setIsChatOpen} />
+          <ChatLog
+            chatLog={chatLog}
+            setIsChatOpen={setIsChatOpen}
+            selectedId={selectedId}
+          />
         )}
       </div>
     </div>
   );
 }
 export default Tree;
-
 
 // <div id="chartdiv"></div>
 //         {isChatOpen && (

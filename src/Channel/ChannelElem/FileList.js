@@ -8,10 +8,7 @@ import FolderIcon from "@mui/icons-material/Folder";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CircularProgress from "@mui/joy/CircularProgress";
 import List from "@mui/material/List";
-import { styled } from '@mui/material/styles';
-
-
-
+import { styled } from "@mui/material/styles";
 
 // const listStyle = {
 //   backgroundColor: isUploading ? "#888888" : "#ffffff",
@@ -27,7 +24,7 @@ export default function FileList({ files, setFiles, channelId, isUploading }) {
   //   width: '230px',
   //   height: '400px'
   // };
-  const fileListTitle = "< FileList/>"
+  const fileListTitle = "< FileList/>";
 
   return (
     <div className="fileListWrapper">
@@ -55,16 +52,16 @@ export default function FileList({ files, setFiles, channelId, isUploading }) {
               </ListItemAvatar>
               <ListItemText
                 primary={file.fileName}
-                style={{ overflow: "auto" }}
+                style={{ overflow: "hidden" }}
               />
             </ListItem>
           ))}
-          {isUploading && (<div className="progressContainer">
-            <CircularProgress className="fileListProgress" />
-          </div>)}
-
+          {isUploading && (
+            <div className="progressContainer">
+              <CircularProgress className="fileListProgress" />
+            </div>
+          )}
         </List>
-
       </div>
     </div>
   );
@@ -112,7 +109,6 @@ export default function FileList({ files, setFiles, channelId, isUploading }) {
 
 //   // 확장자에 따른 이미지 경로 설정
 //   const imageUrl = `/static/img/fileicon/${fileExtension}.png`; // 기본 이미지 경로
-
 
 //   return (
 //     <Card sx={{ width: "100%", height: "100%", display: "flex" }}>
@@ -175,7 +171,6 @@ export default function FileList({ files, setFiles, channelId, isUploading }) {
 // // //     }
 // // //   }};
 // // // `;
-
 
 // // // import styled from "styled-components";
 

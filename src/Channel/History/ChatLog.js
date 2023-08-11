@@ -1,51 +1,65 @@
 import * as React from "react";
 import { Button } from "@mui/material";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { SelectedContext } from "../../services/api";
 
-export default function ChatLog({ chatLog, setIsChatOpen }) {
-  const chatTitle = "< Chat/>"
+export default function ChatLog({ chatLog, setIsChatOpen, selectedId }) {
+  const chatTitle = "< Chat/>";
+  const navigate = useNavigate();
+
+  const SelectedId = async () => {
+    try {
+      const response = await SelectedContext(selectedId);
+      console.log(response);
+
+      navigate(`/channel/${response.channelId}`, {
+        state: {
+          msgId: selectedId,
+        },
+      });
+    } catch (error) {
+      console.error("데이터를 서버로 전송하는 중 오류가 발생했습니다:", error);
+    }
+  };
 
   return (
-    <div className="ChatCardWrap" >
+    <div className="ChatCardWrap">
       <div className="ChatTitleWrap">
         <div className="ChatTitle">{chatTitle}</div>
         <div style={{ flex: 1 }}></div>
-        <div
-          className="ChatClose"
-          onClick={() => setIsChatOpen(false)}
-        >
+        <div className="ChatClose" onClick={() => setIsChatOpen(false)}>
           X
         </div>
       </div>
 
-      <div className="ChatListWrap">
-
+      <div className="ChatListWrap" style={{ overflow: "hidden" }}>
         {/* User */}
         <div className="UserChat">
           <img
             src=" /static/img/choi.png"
             style={{ width: "50px", height: "50px", marginRight: "10px" }}
           />
-          <div style={{ fontSize: "26px", fontFamily: 'Black Han Sans' }}>
+          <div style={{ fontSize: "26px", fontFamily: "Black Han Sans" }}>
             {chatLog.question}
           </div>
         </div>
         {/* bot */}
-        <div className="BotChat"
-        >
+        <div className="BotChat">
           <img
             src="/static/img/bot.png"
-            style={{ width: "50px", height: "40px", marginRight: '10px' }}
+            style={{ width: "50px", height: "40px", marginRight: "10px" }}
           />
-          <div style={{ fontSize: "28px", fontFamily: 'Black Han Sans' }}>
+          <div style={{ fontSize: "28px", fontFamily: "Black Han Sans" }}>
             {chatLog.answer}
           </div>
         </div>
       </div>
       <div className="ChatCardButtonWrap">
         <Button
-          onClick={() => setIsChatOpen(false)}
+          onClick={() => SelectedId()}
           variant="contained"
-          sx={{ backgroundColor: 'black' }}
+          sx={{ backgroundColor: "black" }}
         >
           이동
         </Button>
@@ -53,8 +67,6 @@ export default function ChatLog({ chatLog, setIsChatOpen }) {
     </div>
   );
 }
-
-
 
 // {/* User */}
 // <div
@@ -75,7 +87,6 @@ export default function ChatLog({ chatLog, setIsChatOpen }) {
 //   {chatLog.question}
 // </div>
 // </div>
-
 
 // {/* bot */}
 // <div

@@ -1,12 +1,11 @@
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function HistoryBar() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -24,17 +23,19 @@ function HistoryBar() {
   };
 
   return (
-
-
-
     <>
-      <img alt="Remy Sharp" src="/static/img/h1.png" className='logo' />
+      <img
+        alt="Remy Sharp"
+        src="/static/img/h1.png"
+        className="logo"
+        onClick={() => navigate(-1)}
+      />
       <div style={{ flex: 1 }}></div>
       <Button
         id="basic-button"
-        aria-controls={anchorEl ? 'basic-menu' : undefined}
+        aria-controls={anchorEl ? "basic-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={anchorEl ? 'true' : undefined}
+        aria-expanded={anchorEl ? "true" : undefined}
         onClick={handleClick}
       >
         <img alt="Remy Sharp" src="/static/img/menu.png" className="menu" />
@@ -45,19 +46,14 @@ function HistoryBar() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
         MenuListProps={{
-          'aria-labelledby': 'basic-button',
+          "aria-labelledby": "basic-button",
         }}
-      >
-
-      </Menu>
+      ></Menu>
     </>
-  )
-
+  );
 }
 
-export default HistoryBar
-
-
+export default HistoryBar;
 
 // <img alt="Remy Sharp" src="/static/img/h1.png" className='logo' />
 //       <div style={{ flex: 1 }}></div>

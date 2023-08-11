@@ -1,13 +1,12 @@
-
-import { useNavigate } from 'react-router-dom';
-import '../Styles/WorkSpace.css'
+import { useNavigate } from "react-router-dom";
+import "../Styles/WorkSpace.css";
 import LeftSideBar from "./WorkSpaceArea/LeftSideBar";
-import RightSideBar from "./WorkSpaceArea/RightSideBar"
-import WorkSpaceMain from './WorkSpaceArea/WorkSpaceMain';
-import WorkSpaceBar from './WorkSpaceArea/WorkSpaceBar';
-import React, { useState, useEffect } from 'react';
-import { CheckToken } from '../services/api';
-import { GetWorkSpaceData } from '../services/api'
+import RightSideBar from "./WorkSpaceArea/RightSideBar";
+import WorkSpaceMain from "./WorkSpaceArea/WorkSpaceMain";
+import WorkSpaceBar from "./WorkSpaceArea/WorkSpaceBar";
+import React, { useState, useEffect } from "react";
+import { CheckToken } from "../services/api";
+import { GetWorkSpaceData } from "../services/api";
 
 /* 컴포넌트 */
 function WorkSpace() {
@@ -16,29 +15,31 @@ function WorkSpace() {
   const [wordCloudList, setWordCloudList] = useState([]);
   const [tagList, setTagList] = useState([]);
   const [clickedChannelId, setClickedChannelId] = useState(null);
+  const [fileSize, setFileSize] = useState(0);
 
   /* 보여질 채널 리스트 */
   const [showChannelList, setShowChannelList] = useState([]);
   /* 위에 달릴 체크 리스트 */
   const [clickTagList, setClickTagList] = useState([]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    checkTokenAndNavigate()
-    getWorkSapceData()
-    console.log("clickTagList", clickTagList)
+    checkTokenAndNavigate();
+    getWorkSapceData();
+    console.log("clickTagList", clickTagList);
   }, []);
-
 
   /* clickTagList가 변화 할 때마다 showChannelList 갱신 */
   useEffect(() => {
     if (clickTagList.length === 0) {
       setShowChannelList(workspaceDataList);
     } else {
-      const filteredChannels = workspaceDataList.filter(workspaceData =>
-        clickTagList.some(clickTag =>
-          workspaceData.wordCloud.slice(0, 3).some(cloudWord => cloudWord === clickTag)
+      const filteredChannels = workspaceDataList.filter((workspaceData) =>
+        clickTagList.some((clickTag) =>
+          workspaceData.wordCloud
+            .slice(0, 3)
+            .some((cloudWord) => cloudWord === clickTag)
         )
       );
 
@@ -50,9 +51,8 @@ function WorkSpace() {
   const checkTokenAndNavigate = async () => {
     const response = await CheckToken();
     if (response === "success") {
-
     } else {
-      navigate('/')
+      navigate("/");
     }
   };
 
@@ -61,61 +61,69 @@ function WorkSpace() {
     const response = await GetWorkSpaceData();
 
     if (response.result === "success") {
-      setWorkspaceDataList(response.channelInfoList)
-      setShowChannelList(response.channelInfoList)
+      setWorkspaceDataList(response.channelInfoList);
+      setShowChannelList(response.channelInfoList);
 
-      console.log(workspaceDataList)
+      console.log(workspaceDataList);
       const dummyList = new Set();
       response.channelInfoList.forEach((channelInfo) => {
         channelInfo.wordCloud.slice(0, 3).forEach((word) => {
-          dummyList.add(word)
-        })
+          dummyList.add(word);
+        });
       });
       setTagList(Array.from(dummyList));
-
-
     } else {
       console.log("fail");
     }
-  }
+  };
 
   /* WordCloud를 설정하는 함수 */
   const getWordCloud = (channelId) => {
     setClickedChannelId(channelId);
-    const channel = workspaceDataList.find(item => item.channelId === channelId); // Find the channel with matching channelId
+    const channel = workspaceDataList.find(
+      (item) => item.channelId === channelId
+    ); // Find the channel with matching channelId
     setWordCloudList(channel ? channel.wordCloud : []);
     console.log("wordCloudList");
-  }
+  };
 
+  const totalSize = (channelId) => {
+    let channel = workspaceDataList.find(
+      (item) => item.channelId === channelId
+    ); // Find the channel with matching channelId
+    console.log(channel);
+    setFileSize(channel ? channel.totalSize : []);
+  };
 
   return (
     <div className="workspaceWrap">
-      <div className='workspaceUpperBar'>
+      <div className="workspaceUpperBar">
         <WorkSpaceBar />
       </div>
-      <div className='workspaceElemWrap'>
-
+      <div className="workspaceElemWrap">
         <LeftSideBar
           workspaceDataList={workspaceDataList}
           tagList={tagList}
           setTagList={setTagList}
           setClickTagList={setClickTagList}
           showChannelList={showChannelList}
-          setShowChannelList={setShowChannelList} />
+          setShowChannelList={setShowChannelList}
+        />
         <WorkSpaceMain
           showChannelList={showChannelList}
           getWordCloud={getWordCloud}
           clickTagList={clickTagList}
           setClickTagList={setClickTagList}
-          setTagList={setTagList} />
-        <RightSideBar wordCloudList={wordCloudList} />
+          setTagList={setTagList}
+          totalSize={totalSize}
+        />
+        <RightSideBar wordCloudList={wordCloudList} fileSize={fileSize} />
       </div>
     </div>
-  )
+  );
 }
 
 export default WorkSpace;
-
 
 // <div className="workspaceWrap">
 //       <div className="workspaceUpperBar">

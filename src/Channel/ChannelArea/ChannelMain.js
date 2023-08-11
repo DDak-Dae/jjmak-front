@@ -5,7 +5,9 @@ import { Grid, Card, CardContent, Skeleton, CardMedia } from "@mui/material";
 import ChannelCard from "../ChannelElem/ChannelCard";
 import ChatBar from "../ChannelElem/ChatBar";
 import { useState } from "react";
-import CircularProgress from "@mui/joy/CircularProgress";
+import CircularProgress, {
+  circularProgressClasses,
+} from "@mui/material/CircularProgress";
 
 function ChannelMain({
   channelId,
@@ -13,7 +15,7 @@ function ChannelMain({
   addMessage,
   spliceMessage,
   getChatData,
-  scrollRef
+  scrollRef,
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -48,10 +50,33 @@ function ChannelMain({
             >
               <CardContent style={{ display: "flex" }}>
                 <CardContent>
-                  <img src="/static/img/bot.png" style={{ width: '50px', height: '40px' }} />
+                  <img
+                    src="/static/img/bot.png"
+                    style={{ width: "50px", height: "40px" }}
+                  />
                 </CardContent>
-                <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <CircularProgress />
+                <div
+                  style={{
+                    flex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CircularProgress
+                    variant="indeterminate"
+                    sx={{
+                      color: (theme) =>
+                        theme.palette.mode === "light" ? "#993300" : "#993300",
+                      animationDuration: "2000ms",
+                      left: 0,
+                      [`& .${circularProgressClasses.circle}`]: {
+                        strokeLinecap: "butt",
+                      },
+                    }}
+                    size={60}
+                    thickness={4}
+                  />
                 </div>
               </CardContent>
             </Card>
