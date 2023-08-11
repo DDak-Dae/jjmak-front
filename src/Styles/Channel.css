@@ -101,6 +101,9 @@
   border: 1px solid black;
   overflow-y: auto;
 }
+.fileList::-webkit-scrollbar{
+  display: none;
+}
 
 .progressContainer {
   display: flex;

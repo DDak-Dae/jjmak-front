@@ -152,7 +152,7 @@ export default function ChannelCard({
         <CardContent>
           <img src={imageUrl} style={{ width: '50px', height: role === 'gpt' ? '40px' : '50px', }} />
         </CardContent>
-        <CardActionArea onClick={CardClick}>
+        <CardActionArea onDoubleClick={CardClick}>
           <CardContent style={{ userSelect: "text" }}>
             {isEditing ? (
               <TextField

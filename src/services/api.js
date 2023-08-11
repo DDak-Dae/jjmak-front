@@ -325,3 +325,9 @@ export async function SelectedContext(selectedId) {
     console.error("SelectedContext 오류:", error);
   }
 }
+
+/* 초기화*/
+export async function Initialize() {
+    const response = await axios.get(SERVERURL + "/api/initialize");
+    alert(response.data)
+}

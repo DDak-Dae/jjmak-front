@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import WorkSpaceMakeChannelDialog from '../WorkSpaceElem/WorkSpaceMakeChannelDialog';
+import { Initialize } from '../../services/api';
 
 export default function WorkSpaceBar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -44,6 +45,7 @@ export default function WorkSpaceBar() {
         }}
       >
         <MenuItem onClick={handleAddChannel}>새 채널 생성</MenuItem>
+        <MenuItem onClick={Initialize}>초기화</MenuItem>
       </Menu>
       <WorkSpaceMakeChannelDialog open={isDialogOpen} setOpen={setIsDialogOpen} />
     </>
