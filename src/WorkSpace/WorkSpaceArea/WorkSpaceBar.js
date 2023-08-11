@@ -44,7 +44,7 @@ export default function WorkSpaceBar() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleAddChannel}>새 채널 생성</MenuItem>
+        <MenuItem onClick={handleAddChannel}>새 페이지 생성</MenuItem>
         <MenuItem onClick={Initialize}>초기화</MenuItem>
       </Menu>
       <WorkSpaceMakeChannelDialog open={isDialogOpen} setOpen={setIsDialogOpen} />

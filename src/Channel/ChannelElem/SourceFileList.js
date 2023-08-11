@@ -31,7 +31,7 @@ export default function SourceFileList({ sourceList, selectedImages, setSelected
     setOpen(false);
   };
 
-  // console.log(sourceList);
+  // // console.log(sourceList);
 
   return (
     <div>

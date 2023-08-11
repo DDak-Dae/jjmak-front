@@ -19,7 +19,7 @@ import { useState } from "react";
 function ChannelLeftSideBar({ channelId, files, setFiles }) {
   const [isUploading, setIsUploading] = useState(false);
 
-  console.log(files);
+  // console.log(files);
   return (
     <div className="ChannelLeftSideBarWrap">
       <DragAndDrop

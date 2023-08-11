@@ -8,7 +8,7 @@ import Divider from "@mui/material/Divider";
 
 
 export default function LeftSideBar({ workspaceDataList, tagList, setTagList, setClickTagList, showChannelList, setShowChannelList }) {
-  console.log(tagList)
+  // console.log(tagList)
 
   return (
     <div className="leftSideBarWrap">

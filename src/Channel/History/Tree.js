@@ -18,7 +18,7 @@ function Tree() {
     const fetchData = async () => {
       try {
         const fetchedTreeData = await GetTreeData();
-        console.log(fetchedTreeData);
+        // console.log(fetchedTreeData);
         setTreeData(fetchedTreeData);
         setIsLoading(false); // Data loading is complete
       } catch (error) {
@@ -94,8 +94,8 @@ function Tree() {
       //   ]);
 
       series.nodes.template.events.on("click", function (ev) {
-        console.log(ev.target.dataItem.dataContext.question);
-        console.log(ev.target.dataItem.dataContext.answer);
+        // console.log(ev.target.dataItem.dataContext.question);
+        // console.log(ev.target.dataItem.dataContext.answer);
         setSeletedId(ev.target.dataItem.dataContext.id);
         setChatLog({
           question: ev.target.dataItem.dataContext.question,
@@ -104,7 +104,7 @@ function Tree() {
         setIsChatOpen(true);
       });
       // series.nodes.template.events.on("dblclick", function (ev) {
-      //   console.log(ev.target.dataItem.dataContext.id);
+      //   // console.log(ev.target.dataItem.dataContext.id);
       // });
 
       series.data.setAll([treeData]);
@@ -127,7 +127,7 @@ function Tree() {
   // const SelectedId = async () => {
   //   try {
   //     const response = await SelectedContext(selectedId);
-  //     console.log(response);
+  //     // console.log(response);
 
   //     navigate(`/channel/${response.channelId}`, {
   //       state: {

@@ -22,7 +22,7 @@ function ChatBar({ channelId, addMessage, loading, setLoading }) {
       return;
     }
     setLoading(true);
-    console.log(messageData);
+    // console.log(messageData);
     addMessage(messageData);
     setMessageData({ message: "", role: "user" }); // 메시지 전송 후 입력 필드 초기화
     sendMessage(messageData);
@@ -31,7 +31,7 @@ function ChatBar({ channelId, addMessage, loading, setLoading }) {
   const sendMessage = async (query) => {
     const response = await SendMessageToServer(channelId, query);
     const sourceList = response.sourceList;
-    console.log(sourceList);
+    // console.log(sourceList);
 
     addMessage({
       id: query.id,

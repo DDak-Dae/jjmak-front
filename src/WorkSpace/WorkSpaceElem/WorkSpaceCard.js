@@ -30,7 +30,7 @@ export default function WorkSpaceCard({
   const channelUrl = "/channel/" + showChannel.channelId;
   // <Link to={'/'} >버튼</Link>
   // <CardActionArea onClick={()=> {navigate('/chat')}}>
-  console.log(showChannel);
+  // console.log(showChannel);
 
   const buttonStyle = buttonStyles();
 
@@ -115,7 +115,7 @@ export default function WorkSpaceCard({
 }
 
 // {workspaceData.map((workspace) => {
-//   console.log(workspace)
+//   // console.log(workspace)
 //   // workspace.wordCloud.slice(0, 3).map((word) => {
 //   //   <Button variant='outlined' size="small" style={{ borderRadius: "40px", marginleft: "5px", marginRight: "5px" }}>{word}</Button>
 //   // })

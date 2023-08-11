@@ -29,7 +29,7 @@ function BookMarkPage() {
   const ModalOnOff = (index) => {
     setIsModalOpen(!isModalOpen);
     setIsPDFOpen(true)
-    console.log(bookMarkRoleChatList);
+    // console.log(bookMarkRoleChatList);
     if (index === -1) {
       setBookMarkRoleChatList([]);
       return;
@@ -48,13 +48,13 @@ function BookMarkPage() {
 
   const getBookMarkData = async () => {
     const response = await GetBookMarkData();
-    // console.log(response.bookmarkList[0].imgPath +'.jpg');
+    // // console.log(response.bookmarkList[0].imgPath +'.jpg');
     setBookMarkList(response.bookmarkList);
     if (response.result === "success") {
-      // console.log("getWorkSpaceDate success")
-      // console.log(response.channelInfoList)
+      // // console.log("getWorkSpaceDate success")
+      // // console.log(response.channelInfoList)
     } else {
-      console.log("fail");
+      // console.log("fail");
     }
   }
 

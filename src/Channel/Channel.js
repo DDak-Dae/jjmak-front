@@ -46,9 +46,9 @@ function Channel() {
 
   const spliceMessage = (index) => {
     const chatsCopy = [...chatMessages];
-    console.log(chatsCopy);
+    // console.log(chatsCopy);
     chatsCopy.splice(index);
-    console.log(chatsCopy);
+    // console.log(chatsCopy);
 
     setChatMessages(chatsCopy);
   };
@@ -61,23 +61,23 @@ function Channel() {
     // if(location.state.msgId){
     //   setMsgId(location.state.msgId)
     // }
-    // console.log(location.state.msgId);
+    // // console.log(location.state.msgId);
     const response = await GetChannelData(channelId, location?.state?.msgId);
 
     if (response.result === "success") {
-      console.log(response.messageList);
+      // console.log(response.messageList);
       setFiles(response.fileList);
       setChatMessages(response.messageList)
-      // console.log("getWorkSpaceDate success")
-      // console.log(response.channelInfoList)
+      // // console.log("getWorkSpaceDate success")
+      // // console.log(response.channelInfoList)
       setLoading(true)
     } else {
-      console.log("fail");
+      // console.log("fail");
     }
   };
 
   const getChatData = (chatData) => {
-    // console.log(bookMarkChatData);
+    // // console.log(bookMarkChatData);
     // chatData가 이전 bookMarkChatData에 이미 있는지 검사합니다.
     const isDataExist = bookMarkChatData.some(data => data.message === chatData.message && data.role === chatData.role);
 
@@ -97,14 +97,14 @@ function Channel() {
     );
     // 새로운 배열로 bookMarkChatData 상태 업데이트
     setBookMarkChatData(updatedBookMarkChatData);
-    console.log(chatDataToRemove);
+    // console.log(chatDataToRemove);
   };
 
   //북마크 추가 버튼누르고 서버에 데이터 보내기
   const sendBookMarkData = async (bookMarkName, bookMarkPhotoFile, setIsModalOpen) => {
-    // console.log(bookMarkName);
-    // console.log(bookMarkPhotoFile);
-    // console.log(bookMarkChatData);
+    // // console.log(bookMarkName);
+    // // console.log(bookMarkPhotoFile);
+    // // console.log(bookMarkChatData);
 
     const formData = new FormData();
 
@@ -115,11 +115,11 @@ function Channel() {
     formData.append('bookMarkChatData', JSON.stringify(bookMarkChatData));
 
     const response = await SendBookMarkData(formData, bookMarkChatData);
-    // console.log(response);
+    // // console.log(response);
     setBookMarkChatData([]);
   }
 
-  // console.log(channelId);
+  // // console.log(channelId);
   return (
 
     <div className="ChannelWrap">

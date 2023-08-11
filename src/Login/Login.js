@@ -19,7 +19,7 @@ const Login = () => {
   /* Token 확인 */
   const checkTokenAndNavigate = async () => {
     const response = await CheckToken();
-    console.log(response);
+    // console.log(response);
     if (response === "success") {
       navigate('/workspace');
     }
@@ -38,7 +38,7 @@ const Login = () => {
   /* id와 password를 서버로 보내는 함수. 성공시 workspace로 이동 */
   const sendIdPwdToServer = async () => {
     const response = await LoginApi({userId, password});
-    console.log(response)
+    // console.log(response)
     if (response.result === "success") {
       navigate('/workspace');
     } else {
@@ -49,7 +49,7 @@ const Login = () => {
   //회원 가입
   const join = async () => {
     const response = await JoinApi({userId, password, openaiKey});
-    console.log(response)
+    // console.log(response)
     if (response.result === "success") {
       window.location.reload();
     } else {

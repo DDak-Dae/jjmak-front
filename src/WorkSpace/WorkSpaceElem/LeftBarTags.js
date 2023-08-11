@@ -22,7 +22,7 @@ export default function LeftBarTags({
   const buttonStyle = buttonStyles()
 
   function clickTag(tag) {
-    console.log(tag)
+    // console.log(tag)
     // clickTagList에 tag 추가
     setClickTagList(prevClickTagList => [...prevClickTagList, tag]);
 

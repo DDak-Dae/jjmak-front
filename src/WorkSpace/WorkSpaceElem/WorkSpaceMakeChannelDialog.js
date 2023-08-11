@@ -30,7 +30,7 @@ export default function WorkSpaceMakeChannelDialog({ open, setOpen }) {
       /* 새로고침 */
       window.location.reload();
     } else {
-      console.log(response.message)
+      // console.log(response.message)
     }
   }
 
@@ -38,13 +38,13 @@ export default function WorkSpaceMakeChannelDialog({ open, setOpen }) {
   return (
     <div>
       <Dialog open={open} onClose={offValue}>
-        <DialogTitle>새 채널 생성</DialogTitle>
+        <DialogTitle>새 페이지 생성</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
             margin="dense"
             id="channelId"
-            label="Channel name"
+            label="Page name"
             type="email"
             fullWidth
             variant="standard"
@@ -79,7 +79,7 @@ export default function WorkSpaceMakeChannelDialog({ open, setOpen }) {
           </Dropzone>
         </DialogContent>
         <DialogActions>
-          <Button onClick={sendChannelData}>채널 생성</Button>
+          <Button onClick={sendChannelData}>페이지 생성</Button>
           <Button onClick={offValue}>취소</Button>
         </DialogActions>
       </Dialog>
