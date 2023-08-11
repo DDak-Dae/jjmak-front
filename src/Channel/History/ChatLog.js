@@ -33,7 +33,7 @@ export default function ChatLog({ chatLog, setIsChatOpen, selectedId }) {
         </div>
       </div>
 
-      <div className="ChatListWrap" style={{ overflow: "hidden" }}>
+      <div className="ChatListWrap">
         {/* User */}
         <div className="UserChat">
           <img

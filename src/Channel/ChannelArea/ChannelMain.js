@@ -20,11 +20,7 @@ function ChannelMain({
   const [loading, setLoading] = useState(false);
 
   return (
-    <div
-      className="ChannelMainWrap"
-      ref={scrollRef}
-      style={{ overflow: "auto" }}
-    >
+    <div className="ChannelMainWrap" ref={scrollRef}>
       <div className="ChatRoom" style={{ position: "relative" }}>
         <Grid container spacing={0}>
           {chatMessages.map((chatMessage, index) => (
