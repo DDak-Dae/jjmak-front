@@ -175,7 +175,7 @@ export default function FileList({ files, setFiles, channelId, isUploading }) {
 // // // import styled from "styled-components";
 
 // // // function FileCard({ file, files, setFiles, index, chatingName }) {
-// // //   // console.log(file.fileName.split(".").pop());
+// // //   // // console.log(file.fileName.split(".").pop());
 // // //   return (
 // // //     <div className="file">
 // // //       <FileImg type={(file.fileName || "").split(".").pop()} />

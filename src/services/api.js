@@ -18,7 +18,7 @@ export async function LoginApi({ userId, password }) {
     }
     return response.data;
   } catch (error) {
-    console.log("로그인 실패!", error);
+    // console.log("로그인 실패!", error);
   }
 }
 
@@ -36,7 +36,7 @@ export async function JoinApi({ userId, password, openaiKey }) {
     // }
     return response.data;
   } catch (error) {
-    console.log("회원가입 실패!", error);
+    // console.log("회원가입 실패!", error);
   }
 
 }
@@ -48,10 +48,10 @@ export async function CheckToken() {
     const response = await axios.get(SERVERURL + "/api/token", {
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log("토큰이 유효합니다.");
+    // console.log("토큰이 유효합니다.");
     return response.data.result;
   } catch (error) {
-    console.log("토큰이 유효하지 않습니다.", error);
+    // console.log("토큰이 유효하지 않습니다.", error);
   }
 }
 
@@ -63,11 +63,11 @@ export async function GetWorkSpaceData() {
       headers: { Authorization: `Bearer ${token}` },
     });
     const res = response.data;
-    // console.log(res)
+    // // console.log(res)
     return response.data;
     /* 에러 확인용 */
   } catch (error) {
-    console.log("GetWorkSpaceWhenLogin 에러", error);
+    // console.log("GetWorkSpaceWhenLogin 에러", error);
   }
 }
 
@@ -75,7 +75,7 @@ export async function GetWorkSpaceData() {
 export async function CreateChannel(imgFile, channelId, description) {
   const token = GetTokenFromCookie("token");
 
-  console.log(channelId, description);
+  // console.log(channelId, description);
 
   const formData = new FormData();
 
@@ -90,7 +90,7 @@ export async function CreateChannel(imgFile, channelId, description) {
     return response.data;
     /* 에러 확인용 */
   } catch (error) {
-    console.log("Channel space  에러", error);
+    // console.log("Channel space  에러", error);
   }
 }
 
@@ -111,7 +111,7 @@ export async function SendFilesToServer(
 
   formData.append("channelId", channelId);
   for (let key of formData.keys()) {
-    console.log(key, ":", formData.get(key));
+    // console.log(key, ":", formData.get(key));
   }
 
   try {
@@ -121,9 +121,9 @@ export async function SendFilesToServer(
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log("Upload successful:", response.data);
+    // console.log("Upload successful:", response.data);
     const FileList = response.data.fileList;
-    console.log(FileList);
+    // console.log(FileList);
     setFiles(...files, FileList);
   } catch (error) {
     console.error("Error uploading files:", error);
@@ -152,7 +152,7 @@ export async function SendMessageToServer(channelId, query) {
 
 export async function DownloadPdf(image) {
   const token = GetTokenFromCookie("token");
-  console.log(token);
+  // console.log(token);
   const data = {
     imagePath: image,
   };
@@ -178,8 +178,8 @@ export async function DownloadPdf(image) {
 
 /* 채널 생성에 필요한 정보 담아오기 */
 export async function GetChannelData(channelId, msgId) {
-  console.log(msgId);
-  // console.log(channelId);
+  // console.log(msgId);
+  // // console.log(channelId);
   const token = GetTokenFromCookie("token");
   const data = {
     channelId: channelId,
@@ -193,7 +193,7 @@ export async function GetChannelData(channelId, msgId) {
     return response.data;
     /* 에러 확인용 */
   } catch (error) {
-    console.log("getChannelData 에러", error);
+    // console.log("getChannelData 에러", error);
   }
 }
 
@@ -207,7 +207,7 @@ export async function GetTreeData() {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log(response.data);
+    // console.log(response.data);
 
     return response.data;
   } catch (error) {
@@ -239,7 +239,7 @@ export async function SendModifyToServer(preMsg, postMsg) {
 
 export async function GetSelectedId() {
   const token = GetTokenFromCookie("token");
-  console.log("여기까지는 들어옴");
+  // console.log("여기까지는 들어옴");
 
   try {
     const response = await axios.post(SERVERURL +
@@ -249,7 +249,7 @@ export async function GetSelectedId() {
           Authorization: `Bearer ${token}`,
         },
       });
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(
@@ -283,7 +283,7 @@ export async function SendBookMarkData(formData,bookMarkChatData) {
   //   formData: formData,
   //   bookMarkChatData:bookMarkChatData
   // }
-  // console.log(data)
+  // // console.log(data)
 
   try {
     const response = await axios.post(SERVERURL + "/api/addBookmark", formData,
@@ -308,7 +308,7 @@ export async function SelectedContext(selectedId) {
   //   formData: formData,
   //   bookMarkChatData:bookMarkChatData
   // }
-  // console.log(data)
+  // // console.log(data)
 
   try {
     const response = await axios.post(

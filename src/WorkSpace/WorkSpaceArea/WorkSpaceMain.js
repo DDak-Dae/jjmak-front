@@ -25,12 +25,12 @@ function WorkSpaceMain({
   setTagList,
   totalSize,
 }) {
-  // console.log(workspaceDataList)
+  // // console.log(workspaceDataList)
 
   const buttonStyle = buttonStyles();
 
   function tagOnClick(clickTag) {
-    console.log(clickTag);
+    // console.log(clickTag);
     // tagList에 tag 추가
     setTagList((prevClickTagList) => [...prevClickTagList, clickTag]);
 

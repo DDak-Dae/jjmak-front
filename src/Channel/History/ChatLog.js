@@ -11,7 +11,7 @@ export default function ChatLog({ chatLog, setIsChatOpen, selectedId }) {
   const SelectedId = async () => {
     try {
       const response = await SelectedContext(selectedId);
-      console.log(response);
+      // console.log(response);
 
       navigate(`/channel/${response.channelId}`, {
         state: {

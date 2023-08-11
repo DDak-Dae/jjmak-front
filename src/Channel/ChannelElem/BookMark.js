@@ -26,7 +26,7 @@ function BookMark({ bookMarkChatData, removeBookMarkData, sendBookMarkData }) {
         setShowGoodAlert(true);
 
         setTimeout(() => {
-            console.log('asdasd');
+            // console.log('asdasd');
             setShowGoodAlert(false);
         }, 1000);
     }

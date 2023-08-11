@@ -6,7 +6,7 @@ function RightSideBar({ wordCloudList, fileSize }) {
   const formattedFileSize = formatFileSize(fileSize);
 
   function formatFileSize(fileSizeInBytes) {
-    // console.log(fileSizeInBytes);
+    // // console.log(fileSizeInBytes);
     if (fileSizeInBytes < 1024) {
       return `${fileSizeInBytes.toFixed(2)} bytes`;
     } else if (fileSizeInBytes < 1024 * 1024) {

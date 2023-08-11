@@ -8,7 +8,7 @@ function WordCloud({ wordCloudList }) {
   const wordGRef = useRef(null); // 새로운 useRef 추가
 
   useEffect(() => {
-    console.log(wordCloudList);
+    // console.log(wordCloudList);
     const data = wordCloudList;
     // const data = [
     //   '게임', '게임개발', '어드레서블', '유니티', '몬스터',

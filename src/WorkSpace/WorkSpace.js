@@ -27,7 +27,7 @@ function WorkSpace() {
   useEffect(() => {
     checkTokenAndNavigate();
     getWorkSapceData();
-    console.log("clickTagList", clickTagList);
+    // console.log("clickTagList", clickTagList);
   }, []);
 
   /* clickTagList가 변화 할 때마다 showChannelList 갱신 */
@@ -64,7 +64,7 @@ function WorkSpace() {
       setWorkspaceDataList(response.channelInfoList);
       setShowChannelList(response.channelInfoList);
 
-      console.log(workspaceDataList);
+      // console.log(workspaceDataList);
       const dummyList = new Set();
       response.channelInfoList.forEach((channelInfo) => {
         channelInfo.wordCloud.slice(0, 3).forEach((word) => {
@@ -73,7 +73,7 @@ function WorkSpace() {
       });
       setTagList(Array.from(dummyList));
     } else {
-      console.log("fail");
+      // console.log("fail");
     }
   };
 
@@ -84,14 +84,14 @@ function WorkSpace() {
       (item) => item.channelId === channelId
     ); // Find the channel with matching channelId
     setWordCloudList(channel ? channel.wordCloud : []);
-    console.log("wordCloudList");
+    // console.log("wordCloudList");
   };
 
   const totalSize = (channelId) => {
     let channel = workspaceDataList.find(
       (item) => item.channelId === channelId
     ); // Find the channel with matching channelId
-    console.log(channel);
+    // console.log(channel);
     setFileSize(channel ? channel.totalSize : []);
   };
 

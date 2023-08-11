@@ -88,8 +88,8 @@ export default function ChannelCard({
   };
 
   const handleSaveClick = async () => {
-    console.log("이전:", message.message);
-    console.log("이후:", editMessage);
+    // console.log("이전:", message.message);
+    // console.log("이후:", editMessage);
     const editedMessage = {
       message: editMessage,
       role: "user",
@@ -101,7 +101,7 @@ export default function ChannelCard({
     spliceMessage(index + 1);
     const response = await SendModifyToServer(message, editedMessage);
     const sourceList = response.sourceList;
-    console.log(response);
+    // console.log(response);
 
     addMessage({
       id: editedMessage.id,
@@ -125,7 +125,7 @@ export default function ChannelCard({
 
 
   // const test = () => {
-  //   console.log("click card");
+  //   // console.log("click card");
   // };
 
   //데이터 Channel를 거쳐서 RightSideBar까지 보내기
@@ -137,7 +137,7 @@ export default function ChannelCard({
 
 
   const test = () => {
-    console.log("click card");
+    // console.log("click card");
   };
 
   // "#E3DAC9" 쓸 수도 있는 거
